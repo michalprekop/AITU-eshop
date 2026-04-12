@@ -84,6 +84,22 @@ function aitu_current_lang_slug() {
 }
 
 /**
+ * Determine whether current language context is Slovak.
+ *
+ * @return bool
+ */
+function aitu_is_slovak_context() {
+	if ( function_exists( 'pll_current_language' ) ) {
+		$current = (string) pll_current_language( 'slug' );
+		if ( '' !== $current ) {
+			return 'sk' === strtolower( $current );
+		}
+	}
+
+	return 'sk' === aitu_current_lang_slug();
+}
+
+/**
  * Resolve language strictly from current URL path.
  *
  * /sk/... => sk
