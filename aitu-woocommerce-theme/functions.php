@@ -824,6 +824,7 @@ function aitu_enqueue_assets() {
 				array(
 					'addToBasket' => aitu_t( 'add to basket', 'pridať do košíka' ),
 					'addedToCart' => aitu_t( 'Product added to cart.', 'Produkt bol pridaný do košíka.' ),
+					'viewCart' => aitu_t( 'View cart →', 'Zobraziť košík →' ),
 					'cartTotalLabel' => aitu_t( 'TOTAL:', 'SPOLU' ),
 					'cartHeadingLabel' => aitu_t( 'CART', 'KOŠÍK' ),
 					'cartEmptyLabel' => aitu_t( 'YOUR CART IS CURRENTLY EMPTY!', 'VÁŠ KOŠÍK JE MOMENTÁLNE PRÁZDNY!' ),

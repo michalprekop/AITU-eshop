@@ -1497,12 +1497,16 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
 }
 
 .aitu-cart-toast {
+  align-items: center;
   background: var(--aitu-white);
   border: 1px solid var(--aitu-black);
   color: var(--aitu-black);
+  display: flex;
+  flex-direction: column;
   font-family: var(--aitu-font);
   font-size: 20px;
   font-weight: 400;
+  gap: 24px;
   left: 50%;
   max-width: min(92vw, 1280px);
   line-height: 1.2;
@@ -1521,7 +1525,34 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
 
 .aitu-cart-toast.is-visible {
   opacity: 1;
+  pointer-events: auto;
   transform: translate(-50%, 0);
+}
+
+.aitu-cart-toast__message {
+  margin: 0;
+}
+
+.aitu-cart-toast__action {
+  align-items: center;
+  background: var(--aitu-black);
+  color: var(--aitu-white) !important;
+  display: inline-flex;
+  font-family: var(--aitu-font);
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  min-height: 64px;
+  min-width: 360px;
+  padding: 0 36px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.aitu-cart-toast__action:hover,
+.aitu-cart-toast__action:focus {
+  color: var(--aitu-white) !important;
+  filter: brightness(0.92);
 }
 
 .screen-reader-text {
@@ -1726,6 +1757,10 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
     max-width: calc(100vw - 32px);
     min-width: 0;
     padding: 22px 24px;
+  }
+
+  .aitu-cart-toast__action {
+    min-width: 100%;
   }
 
   .aitu-home-grid {
