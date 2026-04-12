@@ -1,0 +1,248 @@
+.wp-block-aitu-product-row,
+.wp-block-aitu-banner {
+  border: 1px dashed #868686;
+  padding: 16px;
+}
+
+.wp-block-aitu-banner {
+  border: 0;
+  margin: 40px 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  padding: 0;
+  width: 100%;
+}
+
+.editor-styles-wrapper .wp-block-aitu-banner,
+.block-editor-block-list__block.wp-block-aitu-banner {
+  margin-bottom: 40px !important;
+  margin-top: 40px !important;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-card {
+  box-sizing: border-box;
+  max-width: none !important;
+  overflow-x: hidden !important;
+  padding-bottom: 40px !important;
+  padding-top: 40px !important;
+  width: 100%;
+}
+
+.wp-block-aitu-product-row .aitu-block-editor-title,
+.wp-block-aitu-banner .aitu-block-editor-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.wp-block-aitu-product-row .aitu-block-editor-head,
+.wp-block-aitu-banner .aitu-block-editor-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-banner-canvas {
+  align-items: center;
+  background-color: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px dashed #868686;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 40px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-banner-overlay {
+  align-items: center;
+  background: #fff !important;
+  border: 1px solid #000 !important;
+  box-sizing: border-box;
+  color: #000 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-banner-empty {
+  bottom: 14px;
+  color: #868686;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  left: 50%;
+  letter-spacing: 0.04em;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.wp-block-aitu-product-row .aitu-block-editor-controls-products {
+  margin-bottom: 14px;
+}
+
+.wp-block-aitu-product-row .aitu-slot-grid {
+  column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+.wp-block-aitu-product-row .aitu-slot-col {
+  min-width: 0;
+}
+
+.wp-block-aitu-product-row .aitu-slot-col-label {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.wp-block-aitu-product-row .aitu-slot-select {
+  border: 1px solid #000;
+  border-radius: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  min-height: 36px;
+  padding: 6px 8px;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-controls-banner {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-banner-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-controls-banner .components-base-control {
+  margin-bottom: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-controls-banner .components-text-control__input {
+  background: #fff !important;
+  border: 1px solid #000 !important;
+  border-radius: 0;
+  color: #000 !important;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-controls-banner .components-base-control__label {
+  color: #000 !important;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-banner-actions .components-button {
+  background: #fff !important;
+  border: 1px solid #000 !important;
+  border-radius: 0;
+  box-shadow: none;
+  color: #000 !important;
+}
+
+.wp-block-aitu-product-row .aitu-block-editor-live-preview {
+  overflow-x: auto;
+}
+
+.wp-block-aitu-product-row .aitu-home-grid-module,
+.wp-block-aitu-product-row .aitu-home-grid {
+  column-gap: 14px;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  margin: 0 !important;
+  max-width: none !important;
+  row-gap: 14px;
+  width: 100% !important;
+}
+
+.wp-block-aitu-product-row .aitu-product-card {
+  width: 100% !important;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-image {
+  height: auto !important;
+  width: 100% !important;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-image img {
+  aspect-ratio: 1 / 1;
+  height: auto !important;
+  object-fit: cover;
+  position: static !important;
+  width: 100% !important;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-image-secondary {
+  display: none;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-meta {
+  margin-top: 8px !important;
+  width: 100% !important;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wp-block-aitu-product-row .aitu-product-card-price,
+.wp-block-aitu-product-row .aitu-product-card-label {
+  color: #868686;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  margin: 0;
+}
+
+.wp-block-aitu-banner .aitu-banner-module {
+  height: auto;
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-banner-module img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.wp-block-aitu-banner .aitu-block-editor-live-preview,
+.wp-block-aitu-banner .aitu-banner-module {
+  display: none;
+}
+
+.wp-block-aitu-product-row .components-placeholder,
+.wp-block-aitu-banner .components-placeholder {
+  min-height: 120px;
+}

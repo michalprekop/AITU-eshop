@@ -1,0 +1,8 @@
+.DS_Store
+.private/
+backups/
+*.log
+*.sql
+*.sql.gz
+*.zip
+node_modules/
