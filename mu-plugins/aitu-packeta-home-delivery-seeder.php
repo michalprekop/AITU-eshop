@@ -10,15 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Shared display name for allowed Packeta home delivery carriers.
- *
- * @return string
- */
-function aitu_packeta_home_delivery_display_name() {
-	return 'Doručenie kuriérom na adresu';
-}
-
-/**
  * Normalize string for fuzzy comparisons.
  *
  * @param string $value Raw value.
@@ -256,8 +247,7 @@ function aitu_seed_packeta_home_delivery() {
 		$existing             = is_array( $existing ) ? $existing : array();
 		$selected_ids[]       = $carrier_id;
 		$weight_ceiling       = isset( $matched['max_weight'] ) && (float) $matched['max_weight'] > 0 ? (string) $matched['max_weight'] : '9999';
-		$existing['id']       = $carrier_id;
-		$existing['name']                = aitu_packeta_home_delivery_display_name();
+		$existing['id']                  = $carrier_id;
 		$existing['active']              = true;
 		$existing['pricing_type']        = 'byWeight';
 		$existing['free_shipping_limit'] = '150';
