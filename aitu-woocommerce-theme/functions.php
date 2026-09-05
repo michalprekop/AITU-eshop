@@ -1192,9 +1192,30 @@ function aitu_category_link( $slug ) {
 		}
 	}
 
+	$current_lang = aitu_current_lang_slug();
+	$slug_map     = array(
+		't-shirts' => array(
+			'en' => 't-shirts',
+			'sk' => 'tricka',
+		),
+		'tricka'   => array(
+			'en' => 't-shirts',
+			'sk' => 'tricka',
+		),
+	);
+	$candidate_slugs = array( (string) $slug );
+	if ( isset( $slug_map[ $slug ][ $current_lang ] ) ) {
+		array_unshift( $candidate_slugs, $slug_map[ $slug ][ $current_lang ] );
+	}
+	$candidate_slugs = array_values( array_unique( array_filter( array_map( 'strval', $candidate_slugs ) ) ) );
+
 	if ( taxonomy_exists( 'product_cat' ) ) {
-		$term = get_term_by( 'slug', $slug, 'product_cat' );
-		if ( $term && ! is_wp_error( $term ) ) {
+		foreach ( $candidate_slugs as $candidate_slug ) {
+			$term = get_term_by( 'slug', $candidate_slug, 'product_cat' );
+			if ( ! $term || is_wp_error( $term ) ) {
+				continue;
+			}
+
 			$term_id = (int) $term->term_id;
 			if ( function_exists( 'pll_get_term' ) ) {
 				$translated_term_id = (int) pll_get_term( $term_id, aitu_current_lang_slug() );
@@ -1443,7 +1464,7 @@ function aitu_product_hover_image( $product, $primary_image = '' ) {
 
 	$gallery_ids = $product->get_gallery_image_ids();
 	foreach ( $gallery_ids as $gallery_id ) {
-		$gallery_url = wp_get_attachment_image_url( $gallery_id, 'full' );
+		$gallery_url = wp_get_attachment_image_url( $gallery_id, '2048x2048' );
 		if ( $gallery_url && $gallery_url !== $primary_image ) {
 			return $gallery_url;
 		}
@@ -1478,7 +1499,7 @@ function aitu_build_product_card( $product, $index = 0 ) {
 
 	$image = '';
 	if ( $display_product->get_image_id() ) {
-		$image = wp_get_attachment_image_url( $display_product->get_image_id(), 'full' );
+		$image = wp_get_attachment_image_url( $display_product->get_image_id(), '2048x2048' );
 	}
 	if ( ! $image ) {
 		$image = $fallback['image'];

@@ -13,14 +13,14 @@ if ( ! $product || ! $product instanceof WC_Product ) {
 	return;
 }
 
-$main_image = $product->get_image_id() ? wp_get_attachment_image_url( $product->get_image_id(), 'full' ) : '';
+$main_image = $product->get_image_id() ? wp_get_attachment_image_url( $product->get_image_id(), '2048x2048' ) : '';
 if ( ! $main_image ) {
 	$main_image = get_theme_file_uri( '/assets/images/single_main.jpg' );
 }
 
 $gallery_urls = array();
 foreach ( $product->get_gallery_image_ids() as $image_id ) {
-	$url = wp_get_attachment_image_url( $image_id, 'full' );
+	$url = wp_get_attachment_image_url( $image_id, '2048x2048' );
 	if ( $url ) {
 		$gallery_urls[] = $url;
 	}
