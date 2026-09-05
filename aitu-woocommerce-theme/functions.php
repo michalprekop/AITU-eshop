@@ -798,43 +798,41 @@ function aitu_enqueue_assets() {
 		$style_version
 	);
 
-	$is_checkout_route = aitu_is_checkout_route();
-	$is_cart_route     = aitu_is_cart_route();
-	if ( ! $is_checkout_route || $is_cart_route ) {
-		$script_path    = get_template_directory() . '/assets/js/theme.js';
-		$script_version = file_exists( $script_path ) ? (string) filemtime( $script_path ) : $version;
-		$script_deps    = array( 'jquery' );
+	// Shared navigation and localized labels are also needed at checkout.
+	$script_path    = get_template_directory() . '/assets/js/theme.js';
+	$script_version = file_exists( $script_path ) ? (string) filemtime( $script_path ) : $version;
+	$script_deps    = array( 'jquery' );
 
-		if ( function_exists( 'is_product' ) && is_product() ) {
-			wp_enqueue_script( 'wc-add-to-cart-variation' );
-			$script_deps[] = 'wc-add-to-cart-variation';
-		}
-
-		wp_enqueue_script(
-			'aitu-theme',
-			get_template_directory_uri() . '/assets/js/theme.js',
-			$script_deps,
-			$script_version,
-			true
-		);
-
-		wp_localize_script(
-			'aitu-theme',
-			'aituThemeI18n',
-				array(
-					'addToBasket' => aitu_t( 'add to basket', 'pridať do košíka' ),
-					'addedToCart' => aitu_t( 'Product added to cart.', 'Produkt bol pridaný do košíka.' ),
-					'viewCart' => aitu_t( 'View cart →', 'Zobraziť košík →' ),
-					'cartTotalLabel' => aitu_t( 'TOTAL:', 'SPOLU' ),
-					'cartHeadingLabel' => aitu_t( 'CART', 'KOŠÍK' ),
-					'cartEmptyLabel' => aitu_t( 'YOUR CART IS CURRENTLY EMPTY!', 'VÁŠ KOŠÍK JE MOMENTÁLNE PRÁZDNY!' ),
-					'checkoutButtonLabel' => aitu_t( 'CHECKOUT', 'POKLADŇA' ),
-					'checkoutHeadingLabel' => aitu_t( 'CHECKOUT', 'POKLADŇA' ),
-					'cartUrl' => aitu_wc_page_url_by_lang( 'cart', aitu_request_path_lang_slug() ),
-					'checkoutUrl' => aitu_wc_page_url_by_lang( 'checkout', aitu_request_path_lang_slug() ),
-			)
-		);
+	if ( function_exists( 'is_product' ) && is_product() ) {
+		wp_enqueue_script( 'wc-add-to-cart-variation' );
+		$script_deps[] = 'wc-add-to-cart-variation';
 	}
+
+	wp_enqueue_script(
+		'aitu-theme',
+		get_template_directory_uri() . '/assets/js/theme.js',
+		$script_deps,
+		$script_version,
+		true
+	);
+
+	wp_localize_script(
+		'aitu-theme',
+		'aituThemeI18n',
+			array(
+				'addToBasket' => aitu_t( 'add to basket', 'pridať do košíka' ),
+				'sizeOptions' => aitu_t( 'Size options', 'Výber veľkosti' ),
+				'addedToCart' => aitu_t( 'Product added to cart.', 'Produkt bol pridaný do košíka.' ),
+				'viewCart' => aitu_t( 'View cart →', 'Zobraziť košík →' ),
+				'cartTotalLabel' => aitu_t( 'TOTAL:', 'SPOLU' ),
+				'cartHeadingLabel' => aitu_t( 'CART', 'KOŠÍK' ),
+				'cartEmptyLabel' => aitu_t( 'YOUR CART IS CURRENTLY EMPTY!', 'VÁŠ KOŠÍK JE MOMENTÁLNE PRÁZDNY!' ),
+				'checkoutButtonLabel' => aitu_t( 'CHECKOUT', 'POKLADŇA' ),
+				'checkoutHeadingLabel' => aitu_t( 'CHECKOUT', 'POKLADŇA' ),
+				'cartUrl' => aitu_wc_page_url_by_lang( 'cart', aitu_request_path_lang_slug() ),
+				'checkoutUrl' => aitu_wc_page_url_by_lang( 'checkout', aitu_request_path_lang_slug() ),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'aitu_enqueue_assets' );
 
@@ -1024,13 +1022,7 @@ add_filter(
 	10
 );
 
-add_filter(
-	'wc_get_price_decimals',
-	function () {
-		return 0;
-	},
-	10
-);
+// Preserve WooCommerce currency precision for shipping, taxes and refunds.
 
 add_filter(
 	'woocommerce_get_price_html',
@@ -1065,7 +1057,7 @@ add_filter(
 add_filter(
 	'woocommerce_order_button_text',
 	function () {
-		return aitu_t( 'CHECKOUT', 'POKLADŇA' );
+		return aitu_t( 'Place order and pay', 'Objednať s povinnosťou platby' );
 	},
 	10
 );
@@ -1374,7 +1366,9 @@ function aitu_format_price_eur( $raw_price ) {
 	}
 
 	$amount = (float) wc_format_decimal( $raw_price );
-	return number_format_i18n( $amount, 0 ) . ' EUR';
+	// Keep whole product prices compact without rounding fractional prices.
+	$decimals = abs( $amount - round( $amount ) ) < 0.000001 ? 0 : wc_get_price_decimals();
+	return number_format_i18n( $amount, $decimals ) . ' EUR';
 }
 
 /**
@@ -1563,6 +1557,9 @@ function aitu_collect_home_cards( $limit = 9 ) {
 			if ( ! $translated_product instanceof WC_Product ) {
 				$translated_product = $product;
 			}
+			if ( 'publish' !== $translated_product->get_status() || ! $translated_product->is_visible() ) {
+				continue;
+			}
 
 			$cards[]                          = aitu_build_product_card( $translated_product, count( $cards ) );
 			$seen_products[ $translated_id ] = true;
@@ -1573,15 +1570,7 @@ function aitu_collect_home_cards( $limit = 9 ) {
 		}
 	}
 
-	$fallback_cards = aitu_home_fallback_cards();
-
-	for ( $i = count( $cards ); $i < $limit; $i++ ) {
-		$fallback_card = $fallback_cards[ $i % count( $fallback_cards ) ];
-		if ( empty( $fallback_card['hover_image'] ) ) {
-			$fallback_card['hover_image'] = $fallback_card['image'];
-		}
-		$cards[] = $fallback_card;
-	}
+	// Show only published products; never fill the shop with demo cards.
 
 	return $cards;
 }
@@ -1754,7 +1743,7 @@ function aitu_collect_home_cards_from_ids( $product_ids, $limit = 9 ) {
 		}
 
 		$product = wc_get_product( $mapped_id );
-		if ( ! $product instanceof WC_Product ) {
+		if ( ! $product instanceof WC_Product || 'publish' !== $product->get_status() || ! $product->is_visible() ) {
 			continue;
 		}
 
@@ -2043,7 +2032,7 @@ function aitu_collect_home_cards_exact_ids( $product_ids, $limit = 3 ) {
 		}
 
 		$product = wc_get_product( $mapped_id );
-		if ( ! $product instanceof WC_Product ) {
+		if ( ! $product instanceof WC_Product || 'publish' !== $product->get_status() || ! $product->is_visible() ) {
 			continue;
 		}
 
@@ -2158,12 +2147,18 @@ function aitu_render_homepage_banner_block( $attributes ) {
 	}
 
 	$link_url = ! empty( $attributes['linkUrl'] ) ? esc_url( (string) $attributes['linkUrl'] ) : '';
+	if ( $link_url && wp_parse_url( $link_url, PHP_URL_HOST ) === wp_parse_url( home_url(), PHP_URL_HOST ) ) {
+		$link_id = url_to_postid( $link_url );
+		if ( $link_id > 0 && 'publish' === get_post_status( $link_id ) ) {
+			$link_url = aitu_localized_post_url( $link_id );
+		}
+	}
 
 	ob_start();
 	if ( '' !== $link_url ) :
 		?>
 		<div class="aitu-banner aitu-banner-module">
-			<a class="aitu-banner-link" href="<?php echo esc_url( $link_url ); ?>">
+			<a class="aitu-banner-link" href="<?php echo esc_url( $link_url ); ?>" aria-label="<?php echo esc_attr( aitu_t( 'Explore the AITU collection', 'Pozrieť kolekciu AITU' ) ); ?>">
 				<img src="<?php echo esc_url( $image_url ); ?>" alt="">
 			</a>
 		</div>
@@ -2787,3 +2782,73 @@ function aitu_strip_legacy_cart_product_blocks_from_content( $content ) {
 	return serialize_blocks( $filtered );
 }
 add_filter( 'the_content', 'aitu_strip_legacy_cart_product_blocks_from_content', 8 );
+
+
+/** Keep the stored attribute slug stable for existing variations and orders. */
+add_filter( 'woocommerce_attribute_label', function ( $label, $name ) {
+	return in_array( $name, array( 'pa_vellkost', 'vellkost' ), true ) ? aitu_t( 'Size', 'Veľkosť' ) : $label;
+}, 20, 2 );
+
+/** Correct legacy /en/ links when English uses the site's root URL. */
+add_action( 'template_redirect', function () {
+	if ( ! is_admin() && '/en' === untrailingslashit( aitu_current_request_path() ) ) {
+		$home = aitu_language_home_url( 'en' );
+		if ( '/en' !== untrailingslashit( (string) wp_parse_url( $home, PHP_URL_PATH ) ) ) {
+			wp_safe_redirect( $home, 301 );
+			exit;
+		}
+	}
+}, 3 );
+
+/** Basic metadata for the custom storefront; product schema comes from WooCommerce. */
+add_action( 'wp_head', function () {
+	if ( is_404() || is_search() || is_feed() || aitu_is_cart_route() || aitu_is_checkout_route() || aitu_is_current_wc_page( 'myaccount' ) ) {
+		return;
+	}
+	$description = '';
+	$image = '';
+	$url = '';
+	if ( is_singular() ) {
+		$url = get_permalink();
+		$description = has_excerpt() ? get_the_excerpt() : get_post_field( 'post_content', get_queried_object_id() );
+		$image = get_the_post_thumbnail_url( get_queried_object_id(), 'large' );
+	} elseif ( is_product_taxonomy() ) {
+		$url = get_term_link( get_queried_object() );
+		$description = term_description();
+	}
+	if ( is_front_page() || is_shop() || aitu_is_current_wc_page( 'shop' ) || ! trim( wp_strip_all_tags( (string) $description ) ) ) {
+		$description = aitu_t(
+			'Original AITU T-shirts with an oversize fit. Discover AITU artwork. Explore the first collection and wear it your way.',
+			'Originálne AITU tričká s oversize strihom. S originálnym dizajnom AITU. Objav prvú kolekciu a nos ju po svojom.'
+		);
+	}
+	if ( is_front_page() ) {
+		$url = aitu_language_home_url();
+	} elseif ( is_shop() ) {
+		$url = aitu_localized_post_url( wc_get_page_id( 'shop' ) );
+	}
+	$description = trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( strip_shortcodes( (string) $description ) ) ) );
+	$description = wp_html_excerpt( $description, 165, '…' );
+	if ( $description ) {
+		echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
+	}
+	if ( ! $url || is_wp_error( $url ) ) {
+		return;
+	}
+	// WordPress already emits the canonical for singular pages.
+	if ( ! is_singular() ) {
+		echo '<link rel="canonical" href="' . esc_url( $url ) . '">' . "\n";
+	}
+	echo '<meta property="og:type" content="' . ( is_product() ? 'product' : 'website' ) . '">' . "\n";
+	echo '<meta property="og:site_name" content="AITU">' . "\n";
+	echo '<meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '">' . "\n";
+	echo '<meta property="og:description" content="' . esc_attr( $description ) . '">' . "\n";
+	echo '<meta property="og:url" content="' . esc_url( $url ) . '">' . "\n";
+	if ( $image ) {
+		echo '<meta property="og:image" content="' . esc_url( $image ) . '">' . "\n";
+	}
+}, 6 );
+
+add_filter( 'get_canonical_url', function ( $url, $post ) {
+	return is_front_page() ? aitu_language_home_url() : $url;
+}, 20, 2 );

@@ -1492,8 +1492,25 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
   text-transform: uppercase;
 }
 
-.aitu-woocommerce-notices {
+.aitu-woocommerce-notices:empty {
   display: none;
+}
+
+.aitu-woocommerce-notices {
+  margin: 24px auto;
+  max-width: 1440px;
+  padding: 0 32px;
+}
+
+.aitu-woocommerce-notices .woocommerce-error,
+.aitu-woocommerce-notices .woocommerce-info {
+  border: 1px solid currentColor;
+  list-style: none;
+  padding: 16px 20px;
+}
+
+.aitu-woocommerce-notices .woocommerce-error {
+  color: #a32323;
 }
 
 .aitu-cart-toast {
@@ -1947,3 +1964,17 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
     width: calc(100% - 32px);
   }
 }
+
+.aitu-catalogue-empty { padding: 48px 32px; }
+
+
+/* Manufacturer garment measurements in centimetres. */
+.aitu-size-table-wrap { overflow-x: auto; margin: 18px 0; }
+.aitu-size-table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.45; text-align: left; }
+.aitu-size-table th, .aitu-size-table td { padding: 10px 9px; border-bottom: 1px solid #dedede; vertical-align: top; }
+.aitu-size-table thead th { font-weight: 500; background: #f7f7f7; }
+.aitu-size-table tbody th { font-weight: 500; }
+.aitu-size-guide-content .aitu-measurement-figure { margin: 22px 0 14px; }
+.aitu-size-guide-content .aitu-measurement-figure img { display: block; width: 100%; height: auto; margin: 0; }
+.aitu-measurement-figure a { display: block; }
+.aitu-measurement-figure figcaption, .aitu-size-guide-content .aitu-size-source { color: #666; font-size: 11px; line-height: 1.5; margin-top: 8px; }

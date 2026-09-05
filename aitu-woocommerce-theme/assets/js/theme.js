@@ -192,7 +192,7 @@
       return;
     }
 
-    var $swatches = $('<div class="aitu-size-swatches" aria-label="Size options"></div>');
+    var $swatches = $('<div class="aitu-size-swatches"></div>').attr("aria-label", window.aituThemeI18n && window.aituThemeI18n.sizeOptions || "Size options");
     var availabilityMap = getStaticAvailabilityMap($form, $select);
     var realVariantValues = getRealVariantValues($form, $select);
     var hasRealVariantValues = Object.keys(realVariantValues).length > 0;
@@ -249,8 +249,13 @@
       });
       return firstValue;
     }
-    $select.find("option").each(function () {
-      var value = String($(this).attr("value") || "").trim();
+    var sizeOrder = ["xxs", "xs", "s", "m", "l", "xl", "xxl", "2xl", "3xl"];
+    $select.find("option").get().sort(function (a, b) {
+      var ai = sizeOrder.indexOf(String(a.value).toLowerCase());
+      var bi = sizeOrder.indexOf(String(b.value).toLowerCase());
+      return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
+    }).forEach(function (option) {
+      var value = String($(option).attr("value") || "").trim();
       if (!value) {
         return;
       }
@@ -262,8 +267,8 @@
       }
 
       var $swatch = $('<button type="button" class="aitu-size-swatch"></button>');
-      $swatch.text($(this).text().trim()).attr("data-value", value);
-      if ($(this).is(":disabled")) {
+      $swatch.text($(option).text().trim()).attr("data-value", value);
+      if ($(option).is(":disabled")) {
         $swatch.addClass("is-disabled").prop("disabled", true);
       }
       $swatches.append($swatch);
@@ -648,7 +653,7 @@
 
     if ($(".aitu-woocommerce-notices .woocommerce-message").length) {
       showToast(addedToCartLabel);
-      $(".aitu-woocommerce-notices").empty();
+      $(".aitu-woocommerce-notices .woocommerce-message").remove();
     }
 
     $(document.body)
@@ -657,22 +662,7 @@
         showToast(addedToCartLabel);
       });
 
-    // Optimistic toast for instant UI feedback (especially in Safari),
-    // then Woo event keeps behavior consistent after AJAX add-to-cart completes.
-    $(document)
-      .off("click.aituToastImmediate", ".single_add_to_cart_button, .add_to_cart_button")
-      .on("click.aituToastImmediate", ".single_add_to_cart_button, .add_to_cart_button", function () {
-        var $button = $(this);
-        if (
-          $button.prop("disabled") ||
-          $button.hasClass("disabled") ||
-          $button.hasClass("loading") ||
-          $button.attr("aria-disabled") === "true"
-        ) {
-          return;
-        }
-        showToast(addedToCartLabel);
-      });
+    // Confirm success only after WooCommerce accepts the product.
   }
 
   function initCartTotalLabel() {
@@ -1182,8 +1172,6 @@
   }
 
   $(document).ready(function () {
-    var isCheckoutPage = $(".wp-block-woocommerce-checkout, .wc-block-checkout").length > 0;
-
     initNavbarSearchOverlay();
     initSingleProductUI();
     initAddToCartToast();
@@ -1192,11 +1180,7 @@
     initCartEmptyLabel();
     initCartNewInStoreDedup();
     initCartCheckoutUrlLocalization();
-    if (!isCheckoutPage) {
-      initCheckoutButtonPlacement();
-      initCheckoutButtonLabel();
-      initCheckoutHeadingLabel();
-    }
+    initCheckoutHeadingLabel();
     initGridHoverPlusCursor();
   });
 

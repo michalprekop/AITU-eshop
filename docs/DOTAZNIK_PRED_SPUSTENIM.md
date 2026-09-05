@@ -27,17 +27,19 @@ Ceny, dopravcov a ich pravidlá v pluginoch nebudem meniť.
 
 ## 3. Veľkosti a fyzické produkty
 
-- Majú všetky tričká rovnaký strih a rozmery? Ak nie, uveď rozdiely podľa dizajnu:
-- Rozmery v cm – šírka trička naplocho pod pazuchami a dĺžka od ramena po spodný lem:
+Rozmery sú už overené: **Build Your Brand Heavy Oversize Tee BY102**, tabuľka SS26. Netreba ich zadávať.
 
-| Veľkosť | Šírka v cm | Dĺžka v cm |
-| --- | --- | --- |
-| S | | |
-| M | | |
-| L | | |
-| XL | | |
+| Veľkosť | Šírka naplocho (cm) | Dĺžka od HSP (cm) | Rukáv (cm) |
+| --- | --- | --- | --- |
+| S | 57 | 76 | 21 |
+| M | 60 | 78 | 22 |
+| L | 63 | 80 | 23 |
+| XL | 66 | 82 | 24 |
 
-- Zdroj rozmerov: meranie alebo tabuľka výrobcu / názov podkladu:
+Tolerancia výrobcu: šírka/dĺžka ±2 cm, rukáv ±1 cm.
+Zdroj: [Technické PDF BY102, SS26](https://decorabel.nl/product/build-your-brand-heavy-oversize-tee/?download=maattabel), aktualizované 27. 3. 2026. Nákres aj tabuľka sú pripravené pre SK/EN web.
+
+- Kde sa robí potlač a výšivka AITU? Potrebné pre presné znenie pôvodu produktov:
 - Hmotnosť jedného zabaleného trička v gramoch, ak ju poznáš (iba údaj produktu; nastavenia dopravných pluginov nemením):
 - Ak sa od posledného doplnenia produktov zmenil fyzický sklad, uveď model, veľkosť a nový počet kusov:
 

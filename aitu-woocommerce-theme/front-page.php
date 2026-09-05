@@ -26,6 +26,7 @@ $has_builder_content       = '' !== $homepage_post_content && has_blocks( $homep
 if ( $has_builder_content ) :
 	?>
 	<section class="aitu-homepage aitu-homepage-builder">
+		<h1 class="screen-reader-text"><?php echo esc_html( aitu_t( 'AITU — independent Slovak streetwear', 'AITU — nezávislý slovenský streetwear' ) ); ?></h1>
 		<?php echo apply_filters( 'the_content', $homepage_post_content ); ?>
 	</section>
 	<?php
@@ -41,6 +42,7 @@ $banner_image = ! empty( $banner_data['image'] ) ? (string) $banner_data['image'
 $banner_link  = ! empty( $banner_data['link'] ) ? (string) $banner_data['link'] : '';
 ?>
 <section class="aitu-homepage">
+	<h1 class="screen-reader-text"><?php echo esc_html( aitu_t( 'AITU — independent Slovak streetwear', 'AITU — nezávislý slovenský streetwear' ) ); ?></h1>
 	<div class="aitu-filter-row" aria-hidden="true">
 		<span><?php echo esc_html( aitu_t( 'Filter', 'Filter' ) ); ?></span>
 		<img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/filter_arrow_home.svg' ) ); ?>" alt="">
@@ -72,7 +74,7 @@ $banner_link  = ! empty( $banner_data['link'] ) ? (string) $banner_data['link'] 
 
 	<?php if ( '' !== $banner_link ) : ?>
 		<div class="aitu-banner">
-			<a class="aitu-banner-link" href="<?php echo esc_url( $banner_link ); ?>">
+			<a class="aitu-banner-link" href="<?php echo esc_url( $banner_link ); ?>" aria-label="<?php echo esc_attr( aitu_t( 'Explore the AITU collection', 'Pozrieť kolekciu AITU' ) ); ?>">
 				<img src="<?php echo esc_url( $banner_image ); ?>" alt="">
 			</a>
 		</div>

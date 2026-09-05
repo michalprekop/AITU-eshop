@@ -28,21 +28,17 @@ foreach ( $product->get_gallery_image_ids() as $image_id ) {
 
 $gallery_urls = array_values( array_unique( $gallery_urls ) );
 
-$description = trim( wp_strip_all_tags( $product->get_description() ) );
+$description = trim( (string) $product->get_description() );
 if ( '' === $description ) {
-	$description = trim( wp_strip_all_tags( $product->get_short_description() ) );
-}
-if ( '' === $description ) {
-	$description = aitu_t(
-		'Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting.',
-		'Lorem Ipsum je len ukážkový text tlačiarenského a sadzačského priemyslu. Používa sa na testovanie rozloženia a typografie.'
-	);
+	$description = trim( (string) $product->get_short_description() );
 }
 
 $size_info_content = trim( (string) get_post_meta( $product->get_id(), aitu_product_size_info_meta_key(), true ) );
 if ( '' === $size_info_content ) {
-	$size_info_content  = '<p>' . esc_html( aitu_t( 'Placeholder: this is a sample size guide block for testing accordion open and close behavior.', 'Ukážka: toto je testovací blok veľkostnej tabuľky na overenie otvárania a zatvárania akordeónu.' ) ) . '</p>';
-	$size_info_content .= '<p>' . esc_html( aitu_t( 'Chest: measure around the fullest part. Length: measure from shoulder to hem. If between sizes, choose the larger size for a relaxed fit.', 'Hrudník: merajte v najširšom mieste. Dĺžka: merajte od ramena po spodný lem. Ak ste medzi veľkosťami, zvoľte väčšiu pre voľnejší fit.' ) ) . '</p>';
+	$size_info_content = '<p>' . esc_html( aitu_t(
+		'Unisex oversize fit: intentionally wider, longer and relaxed. Choose your size according to how loose you want to wear it.',
+		'Unisex oversize strih: zámerne širší, dlhší a voľnejší. Veľkosť si vyber podľa toho, ako voľne chceš tričko nosiť.'
+	) ) . '</p>';
 }
 
 $has_product_variants = $product->is_type( 'variable' ) && ! empty( $product->get_variation_attributes() );
@@ -127,7 +123,7 @@ if ( $product instanceof WC_Product ) {
 
 				<p class="aitu-description-label"><?php echo esc_html( aitu_t( 'description', 'popis' ) ); ?></p>
 				<div class="aitu-product-description">
-					<p><?php echo esc_html( $description ); ?></p>
+					<?php echo wp_kses_post( wpautop( $description ) ); ?>
 				</div>
 				<div class="aitu-info-line"></div>
 				<details class="aitu-size-guide-accordion">
@@ -179,3 +175,9 @@ if ( $product instanceof WC_Product ) {
 			</div>
 		<?php endif; ?>
 </section>
+
+<?php
+// This template does not call the standard product summary hook.
+if ( function_exists( 'WC' ) && WC()->structured_data ) {
+	WC()->structured_data->generate_product_data( $product );
+}
