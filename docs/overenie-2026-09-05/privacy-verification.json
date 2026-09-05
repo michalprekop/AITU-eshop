@@ -1,0 +1,10 @@
+{
+  "woocommerce_analytics_script_absent": true,
+  "woocommerce_analytics_client_absent": true,
+  "analytics_event_queue_absent": true,
+  "google_fonts_request_absent": true,
+  "self_hosted_fonts_css": true,
+  "size_table_present": true,
+  "manufacturer_drawing_present": true,
+  "removed_captions_absent": true
+}

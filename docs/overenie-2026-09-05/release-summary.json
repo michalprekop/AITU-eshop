@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-05",
+  "site": "https://www.aitu.world",
+  "public_http_status": 503,
+  "maintenance_file_unchanged": true,
+  "shipping_plugin_settings_changed": false,
+  "published_products": 14,
+  "designs_per_language": 7,
+  "localized_variations": 56,
+  "shared_size_records": 28,
+  "physical_stock_quantity": 28,
+  "shared_stock_errors": [],
+  "size_guide_products": 14,
+  "orders_created": 0,
+  "temporary_setup_plugins_removed": true,
+  "frontend_html_checked": [
+    "EN home",
+    "SK home",
+    "EN shop",
+    "SK shop",
+    "EN product",
+    "SK product",
+    "EN FAQ",
+    "SK FAQ",
+    "EN redirect"
+  ],
+  "visual_safari_checked": [
+    "SK product size accordion, complete S–XL table and manufacturer drawing",
+    "local questionnaire desktop layout"
+  ],
+  "not_verified": [
+    "real checkout/card/3DS",
+    "transactional email delivery",
+    "invoice issue",
+    "Packeta label creation",
+    "real-order cancellation/refund"
+  ],
+  "deployed_sha256": {
+    "aitu-woocommerce-theme/functions.php": "d00067b53e0bcf352e72d50b5c728d5b9ebcd89978ce8fc49afbd4add21e8a64",
+    "aitu-woocommerce-theme/style.css": "bea491576184edfdac25c3483c60cce1170c67e2628fb75e8c9798122cd4b43b",
+    "aitu-woocommerce-theme/assets/js/theme.js": "211b506ef3d6af066bbdd0f22e4e668da47e28754d07ebbec8f1aa867d5b45cb",
+    "aitu-woocommerce-theme/front-page.php": "d359a42ed97a43fc7aacc4f16e2179e1d4560d74abf288444b868c3ba58499a0",
+    "aitu-woocommerce-theme/woocommerce/content-single-product.php": "83b379e908d534fab3b7b7d6f593eae32afc3bc1b24def119323e5248033e09a",
+    "aitu-woocommerce-theme/woocommerce/archive-product.php": "4ee7a0213037ad6cac050bea43da88ba0c64801bbb76225d3e4f063c15e5e57f",
+    "aitu-woocommerce-theme/template-parts/site-footer.php": "a971d05fa49f051c2aaa96bea8602b3939fbf44c676e68900235048c9e0dbc4e",
+    "aitu-woocommerce-theme/assets/images/by102-measurement-sketch.jpg": "2855310dfbd39a47787c22640c4e08a3e9a66f4b30dda5a385799f6fb53af480",
+    "aitu-woocommerce-theme/assets/css/fonts.css": "668adf28c39d09dc495b8d850f313dcd03f5777e96e1c967c440f32b7cdca6f2",
+    "aitu-woocommerce-theme/assets/fonts/ibm-plex-mono-regular.ttf": "a7fdc993f9f0387caedba4e42521136fa97e4c0837ae6239bf0413ccf8af00c2",
+    "aitu-woocommerce-theme/assets/fonts/ibm-plex-mono-medium.ttf": "4fc14a73ca53ba9d32fd759ae1ca1a3133326035d0dd337862b3ee1633cc156e",
+    "aitu-woocommerce-theme/assets/fonts/ibm-plex-mono-OFL.txt": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f",
+    "mu-plugins/aitu-shared-stock.php": "478a79bef0a59bdabd89f775c39f20958e8c051f47994aa3e5e8257984ebe877",
+    "mu-plugins/aitu-storefront-privacy.php": "70a9dc78a976af93115db38e24102ed17782131ffaa77c9632688e34441ed191"
+  }
+}

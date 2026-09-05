@@ -1,0 +1,22 @@
+{
+  "passed": 15,
+  "checks": [
+    "Factory uses the shared variation class",
+    "English reservations use the Slovak stock owner",
+    "Slovak reservations use the same owner",
+    "English decrease is visible in both languages",
+    "Secondary stored quantity is mirrored",
+    "A different size is unaffected",
+    "English restock restores the owner",
+    "Slovak decrease is visible in English",
+    "Both languages become out of stock at zero",
+    "Overselling is rejected at zero",
+    "Restocking restores availability in both languages",
+    "Administrative English stock edit updates the owner",
+    "Administrative Slovak stock edit updates the translation",
+    "Backorder policy is shared",
+    "Native WooCommerce reservation lookup accepts the shared owner"
+  ],
+  "real_products_changed": false,
+  "orders_created": 0
+}

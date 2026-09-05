@@ -786,7 +786,7 @@ function aitu_enqueue_assets() {
 
 	wp_enqueue_style(
 		'aitu-fonts',
-		'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap',
+		get_theme_file_uri( '/assets/css/fonts.css' ),
 		array(),
 		null
 	);
@@ -2852,3 +2852,14 @@ add_action( 'wp_head', function () {
 add_filter( 'get_canonical_url', function ( $url, $post ) {
 	return is_front_page() ? aitu_language_home_url() : $url;
 }, 20, 2 );
+
+
+/** Link only to completed, published information pages in the selected language. */
+function aitu_info_page_url( $key ) {
+	$pages = get_option( 'aitu_info_pages', array() );
+	$id = isset( $pages[ $key ][ aitu_current_lang_slug() ] ) ? absint( $pages[ $key ][ aitu_current_lang_slug() ] ) : 0;
+	if ( ! $id && 'terms' === $key ) { $id = (int) get_option( 'woocommerce_terms_page_id' ); }
+	if ( ! $id && 'privacy' === $key ) { $id = (int) get_option( 'wp_page_for_privacy_policy' ); }
+	if ( $id ) { $id = aitu_translate_post_id( $id ); }
+	return $id > 0 && 'publish' === get_post_status( $id ) ? aitu_same_host_url( get_permalink( $id ) ) : '';
+}

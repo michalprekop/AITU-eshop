@@ -62,17 +62,34 @@ if ( function_exists( 'pll_the_languages' ) ) {
 		</div>
 
 		<div class="aitu-footer-links aitu-footer-links-social">
-			<a href="#">Instagram</a>
-			<a href="#">X (Twitter)</a>
-			<a href="#"><?php echo esc_html( aitu_t( 'About', 'O nás' ) ); ?></a>
-			<a href="#">FAQ</a>
+			<?php
+			$social_links = get_option( 'aitu_social_links', array() );
+			foreach ( array( 'instagram' => 'Instagram', 'x' => 'X (Twitter)' ) as $key => $label ) {
+				if ( ! empty( $social_links[ $key ] ) ) {
+					echo '<a href="' . esc_url( $social_links[ $key ], array( 'https' ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $label ) . '</a>';
+				}
+			}
+			foreach ( array( 'about' => aitu_t( 'About', 'O nás' ), 'faq' => aitu_t( 'FAQ', 'Časté otázky' ) ) as $key => $label ) {
+				$url = aitu_info_page_url( $key );
+				if ( $url ) { echo '<a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>'; }
+			}
+			?>
 		</div>
 
 		<div class="aitu-footer-links aitu-footer-links-legal">
-			<a href="#"><?php echo esc_html( aitu_t( 'Order Tracking', 'Sledovanie objednávky' ) ); ?></a>
-			<a href="#"><?php echo esc_html( aitu_t( 'Privacy Policy', 'Ochrana súkromia' ) ); ?></a>
-			<a href="#"><?php echo esc_html( aitu_t( 'Cookie Policy', 'Cookie politika' ) ); ?></a>
-			<a href="#"><?php echo esc_html( aitu_t( 'Returns & Refunds', 'Vrátenie a refundácia' ) ); ?></a>
+			<?php
+			foreach ( array(
+				'shipping' => aitu_t( 'Delivery & Payment', 'Doprava a platba' ),
+				'tracking' => aitu_t( 'Order status', 'Stav objednávky' ),
+				'terms' => aitu_t( 'Terms & Conditions', 'Obchodné podmienky' ),
+				'privacy' => aitu_t( 'Privacy Policy', 'Ochrana súkromia' ),
+				'cookies' => aitu_t( 'Cookie Policy', 'Cookies' ),
+				'returns' => aitu_t( 'Returns & Refunds', 'Vrátenie a reklamácie' ),
+			) as $key => $label ) {
+				$url = aitu_info_page_url( $key );
+				if ( $url ) { echo '<a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>'; }
+			}
+			?>
 		</div>
 
 		<p class="aitu-footer-lang">

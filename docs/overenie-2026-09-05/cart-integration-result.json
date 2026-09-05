@@ -1,0 +1,91 @@
+{
+  "overstock_error": {
+    "status": 400,
+    "code": "woocommerce_rest_product_partially_out_of_stock"
+  },
+  "SK": {
+    "rates": [
+      {
+        "name": "SK Výdajné miesta Packety (Z-Point, Z-Box)",
+        "id": "packetery_shipping_method:packetery_carrier_zpointsk",
+        "price": "449",
+        "currency_minor_unit": 2
+      },
+      {
+        "name": "Doručenie kuriérom na adresu / Delivery by courier to your address",
+        "id": "packetery_shipping_method:packetery_carrier_131",
+        "price": "649",
+        "currency_minor_unit": 2
+      }
+    ],
+    "totals": {
+      "total_items": "7600",
+      "total_items_tax": "0",
+      "total_fees": "0",
+      "total_fees_tax": "0",
+      "total_discount": "0",
+      "total_discount_tax": "0",
+      "total_shipping": "449",
+      "total_shipping_tax": "0",
+      "total_price": "8049",
+      "total_tax": "0",
+      "tax_lines": [],
+      "currency_code": "EUR",
+      "currency_symbol": "EUR",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ",",
+      "currency_thousand_separator": " ",
+      "currency_prefix": "",
+      "currency_suffix": " EUR"
+    }
+  },
+  "CZ": {
+    "rates": [
+      {
+        "name": "CZ Výdajné miesta Packety (Z-Point, Z-Box)",
+        "id": "packetery_shipping_method:packetery_carrier_zpointcz",
+        "price": "549",
+        "currency_minor_unit": 2
+      },
+      {
+        "name": "Doručenie kuriérom na adresu / Delivery by courier to your address",
+        "id": "packetery_shipping_method:packetery_carrier_106",
+        "price": "649",
+        "currency_minor_unit": 2
+      }
+    ],
+    "totals": {
+      "total_items": "7600",
+      "total_items_tax": "0",
+      "total_fees": "0",
+      "total_fees_tax": "0",
+      "total_discount": "0",
+      "total_discount_tax": "0",
+      "total_shipping": "549",
+      "total_shipping_tax": "0",
+      "total_price": "8149",
+      "total_tax": "0",
+      "tax_lines": [],
+      "currency_code": "EUR",
+      "currency_symbol": "EUR",
+      "currency_minor_unit": 2,
+      "currency_decimal_separator": ",",
+      "currency_thousand_separator": " ",
+      "currency_prefix": "",
+      "currency_suffix": " EUR"
+    }
+  },
+  "checks": [
+    "Isolated anonymous cart is empty",
+    "Slovak variation can be added",
+    "SK and EN together use exactly two physical units",
+    "Third unit across languages is rejected",
+    "Shipping quote for SK calculates",
+    "Currency precision for SK is two decimal places",
+    "Shipping methods for SK are returned",
+    "Shipping quote for CZ calculates",
+    "Currency precision for CZ is two decimal places",
+    "Shipping methods for CZ are returned",
+    "WooPayments remains available"
+  ]
+}
