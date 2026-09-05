@@ -1,0 +1,15 @@
+.aitu-customer-copy{max-width:840px;margin:0 auto;font-size:15px;line-height:1.8;overflow-wrap:anywhere}
+.aitu-customer-copy h2{font-size:22px;line-height:1.35;margin:2em 0 .7em;letter-spacing:-.03em}
+.aitu-customer-copy p,.aitu-customer-copy ul{margin:0 0 1.2em}
+.aitu-customer-copy a{text-decoration:underline;text-underline-offset:3px}
+.aitu-customer-copy pre{font:inherit;white-space:pre-wrap;background:#f4f4f2;padding:20px;border:1px solid #ddd}
+.aitu-customer-copy label{display:block;margin:1.2em 0 .35em}
+.aitu-customer-copy input,.aitu-customer-copy textarea{display:block;box-sizing:border-box;width:100%;padding:13px;border:1px solid #aaa;border-radius:0;background:#fff;color:#111;font:inherit}
+.aitu-customer-copy textarea{min-height:110px;resize:vertical}
+.aitu-customer-copy button,.aitu-customer-copy .aitu-action{display:inline-block;background:#111;color:#fff;border:1px solid #111;border-radius:0;padding:15px 21px;font:inherit;text-decoration:none;cursor:pointer;margin:.7em .6em .7em 0}
+.aitu-customer-copy button:hover,.aitu-customer-copy .aitu-action:hover{background:#333}
+.aitu-customer-copy :focus-visible{outline:3px solid #ed6c24;outline-offset:3px}
+.aitu-customer-copy .aitu-message{padding:18px;border:1px solid #aaa;background:#f4f4f2;margin:0 0 24px}
+.aitu-customer-copy .aitu-error{border-color:#a22323;color:#851919}
+.aitu-customer-copy small{display:block;font-size:13px}
+@media(max-width:600px){.aitu-customer-copy{font-size:14px}.aitu-customer-copy h2{font-size:20px}.aitu-customer-copy button,.aitu-customer-copy .aitu-action{width:100%;box-sizing:border-box;text-align:center}}

@@ -69,7 +69,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 					echo '<a href="' . esc_url( $social_links[ $key ], array( 'https' ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $label ) . '</a>';
 				}
 			}
-			foreach ( array( 'about' => aitu_t( 'About', 'O nás' ), 'faq' => aitu_t( 'FAQ', 'Časté otázky' ) ) as $key => $label ) {
+			foreach ( array( 'about' => aitu_t( 'About', 'O nás' ), 'faq' => aitu_t( 'FAQ', 'Časté otázky' ), 'contact' => aitu_t( 'Contact', 'Kontakt' ) ) as $key => $label ) {
 				$url = aitu_info_page_url( $key );
 				if ( $url ) { echo '<a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>'; }
 			}
@@ -85,6 +85,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 				'privacy' => aitu_t( 'Privacy Policy', 'Ochrana súkromia' ),
 				'cookies' => aitu_t( 'Cookie Policy', 'Cookies' ),
 				'returns' => aitu_t( 'Returns & Refunds', 'Vrátenie a reklamácie' ),
+				'withdrawal' => aitu_t( 'Withdraw from contract', 'Odstúpiť od zmluvy tu' ),
 			) as $key => $label ) {
 				$url = aitu_info_page_url( $key );
 				if ( $url ) { echo '<a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>'; }

@@ -1,0 +1,216 @@
+{
+  "date": "2026-09-06",
+  "store_locked": true,
+  "shipping_plugin_settings_changed": false,
+  "product_count": 14,
+  "product_weight_kg": "0.31",
+  "active_localized_variations": 56,
+  "private_legacy_variations": 4,
+  "physical_stock_units": 28,
+  "stock_snapshot_unchanged": true,
+  "product_fields_changed": [
+    "weight",
+    "description (exact production sentence)"
+  ],
+  "integration_checks_passed": 39,
+  "checkout_js_checks_passed": 5,
+  "temporary_notices_remaining": 0,
+  "mail_retries_remaining": 0,
+  "real_orders_created": 0,
+  "real_emails_sent": 0,
+  "existing_safari_cart_preserved": true,
+  "rendered_checkout_labels_and_single_currency_verified": [
+    "sk",
+    "en"
+  ],
+  "pages": {
+    "about": {
+      "sk": {
+        "id": 210,
+        "url": "https://www.aitu.world/sk/o-aitu",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 212,
+        "url": "https://www.aitu.world/about-aitu",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "faq": {
+      "sk": {
+        "id": 214,
+        "url": "https://www.aitu.world/sk/caste-otazky",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 216,
+        "url": "https://www.aitu.world/faq",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "shipping": {
+      "sk": {
+        "id": 218,
+        "url": "https://www.aitu.world/sk/doprava-a-platba",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 220,
+        "url": "https://www.aitu.world/delivery-and-payment",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "tracking": {
+      "sk": {
+        "id": 222,
+        "url": "https://www.aitu.world/sk/stav-objednavky",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 224,
+        "url": "https://www.aitu.world/order-status",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "terms": {
+      "sk": {
+        "id": 230,
+        "url": "https://www.aitu.world/sk/obchodne-podmienky",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 232,
+        "url": "https://www.aitu.world/terms-and-conditions",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "privacy": {
+      "sk": {
+        "id": 50,
+        "url": "https://www.aitu.world/sk/ochrana-sukromia",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 3,
+        "url": "https://www.aitu.world/privacy-policy",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "returns": {
+      "sk": {
+        "id": 48,
+        "url": "https://www.aitu.world/sk/vratenie-a-reklamacie",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 10,
+        "url": "https://www.aitu.world/returns-and-refunds",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "cookies": {
+      "sk": {
+        "id": 238,
+        "url": "https://www.aitu.world/sk/cookies",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 240,
+        "url": "https://www.aitu.world/cookie-policy",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "contact": {
+      "sk": {
+        "id": 242,
+        "url": "https://www.aitu.world/sk/kontakt",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 244,
+        "url": "https://www.aitu.world/contact",
+        "status": "publish",
+        "language": "en"
+      }
+    },
+    "withdrawal": {
+      "sk": {
+        "id": 246,
+        "url": "https://www.aitu.world/sk/odstupenie-od-zmluvy",
+        "status": "publish",
+        "language": "sk"
+      },
+      "en": {
+        "id": 248,
+        "url": "https://www.aitu.world/withdraw-from-contract",
+        "status": "publish",
+        "language": "en"
+      }
+    }
+  },
+  "files": {
+    "aitu-woocommerce-theme/style.css": {
+      "remote": "/wp-content/themes/aitu-woocommerce-theme/style.css",
+      "sha256": "055c6d4acfe8b9ac245f6a13579b4ab9168d8220f971856a40d40621a610d5f5",
+      "temporary": false
+    },
+    "mu-plugins/aitu-customer-info/customer.css": {
+      "remote": "/wp-content/mu-plugins/aitu-customer-info/customer.css",
+      "sha256": "e27150daf4607ef1c57b569ae035109996922915d7970c718967fd883ba3fcec",
+      "temporary": false
+    },
+    "mu-plugins/aitu-customer-info/checkout.js": {
+      "remote": "/wp-content/mu-plugins/aitu-customer-info/checkout.js",
+      "sha256": "b281024b3e1bc6bdb35ef6666f14e492c5ec60670a92da1da3fbd836bf752eb1",
+      "temporary": false
+    },
+    "mu-plugins/aitu-customer-info/content.json": {
+      "remote": "/wp-content/mu-plugins/aitu-customer-info/content.json",
+      "sha256": "e523aa5c461bb8a79ec9d40e3d1c5a08110a043e7655c8ad4359fffb49aa0153",
+      "temporary": false
+    },
+    "mu-plugins/aitu-customer-info/withdrawal.php": {
+      "remote": "/wp-content/mu-plugins/aitu-customer-info/withdrawal.php",
+      "sha256": "8adc4b74ed68e3a9932cb0d6e80f98ad298c630625084b8a09f4e7455f3e25b7",
+      "temporary": false
+    },
+    "mu-plugins/aitu-customer-info.php": {
+      "remote": "/wp-content/mu-plugins/aitu-customer-info.php",
+      "sha256": "3a60d1f127aa08eda20e9967a26cc6967640ecbf9be62157e8e99d9a7edaa3d7",
+      "temporary": false
+    },
+    "aitu-woocommerce-theme/template-parts/site-footer.php": {
+      "remote": "/wp-content/themes/aitu-woocommerce-theme/template-parts/site-footer.php",
+      "sha256": "8573719e04dd4f761a9a902a0cae4571c3b991fc4669357cab57bb616c57d6aa",
+      "temporary": false
+    }
+  },
+  "remaining": [
+    "public contact phone",
+    "WooPayments verification",
+    "duplicate DMARC records and real email delivery test",
+    "full controlled order/payment/invoice/shipping/refund test",
+    "real mobile checkout test"
+  ],
+  "invoice_integration": "not activated; confirmed existing SuperFaktura workflow remains manual",
+  "public_status": 503,
+  "public_lock_message_verified": true,
+  "maintenance_file_sha256": "61b675d84d0841f459a4c04ee33196ef521286eb2e9dff83bdd5d9fb83fe95ee"
+}

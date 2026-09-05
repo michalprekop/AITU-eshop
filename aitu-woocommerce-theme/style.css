@@ -1967,6 +1967,43 @@ body.woocommerce-checkout .aitu-default-content .wc-block-components-totals-coup
 
 .aitu-catalogue-empty { padding: 48px 32px; }
 
+/* Let the complete customer-link list determine footer height. */
+.aitu-footer { height: auto; min-height: 385px; padding-bottom: 0; }
+.aitu-footer-inner {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 1fr;
+  column-gap: 28px;
+  row-gap: 48px;
+  height: auto;
+  padding: 117px 5.56% 40px;
+}
+.aitu-footer-links,
+.aitu-footer-links-products,
+.aitu-footer-links-social,
+.aitu-footer-links-legal,
+.aitu-footer-lang { position: relative; inset: auto; margin: 0; }
+.aitu-footer-links { gap: 16px; }
+.aitu-footer-links a { line-height: 1.45; }
+.aitu-footer-lang { line-height: 1.8; }
+.aitu-footer-bottom {
+  position: relative;
+  inset: auto;
+  transform: none;
+  grid-column: 1 / -1;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  width: auto;
+}
+@media (max-width: 1100px) {
+  .aitu-footer-inner { grid-template-columns: 1fr 1fr; padding: 64px 24px 32px; }
+}
+@media (max-width: 600px) {
+  .aitu-footer-inner { grid-template-columns: minmax(0, 1fr); padding: 48px 16px 32px; row-gap: 28px; }
+  .aitu-footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+
 
 /* Manufacturer garment measurements in centimetres. */
 .aitu-size-table-wrap { overflow-x: auto; margin: 18px 0; }
