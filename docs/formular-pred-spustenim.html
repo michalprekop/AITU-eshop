@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AITU – formulár pred spustením</title>
+<style>
+:root{--ink:#17201c;--muted:#626c64;--line:#dce1db;--paper:#f4f5f0;--orange:#ed592b;--green:#315b45}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1040px;margin:auto;padding:48px 28px 100px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}.brand{font-size:32px;font-weight:900;letter-spacing:-2px}.pill{font-size:12px;letter-spacing:.04em;border:1px solid var(--line);border-radius:99px;padding:7px 12px;background:white}.eyebrow{font:12px/1.4 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--green)}h1{font-size:clamp(30px,5vw,48px);line-height:1.13;letter-spacing:-1.8px;max-width:760px;margin:12px 0 20px}h2{font-size:21px;line-height:1.3;letter-spacing:-.4px;margin:0}p{margin:10px 0}.intro{max-width:760px;color:var(--muted)}.facts{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 30px}.fact{background:#e8ede5;padding:6px 11px;border-radius:7px;font-size:13px}.progressbox{margin:0 0 24px}.progressrow{display:flex;justify-content:space-between;gap:15px;font-size:13px;color:var(--muted)}progress{display:block;width:100%;height:7px;margin-top:10px;accent-color:var(--orange)}section{background:white;border:1px solid var(--line);border-radius:14px;padding:28px;margin:18px 0}.sectionhead{display:flex;align-items:flex-start;gap:15px;margin-bottom:22px}.num{display:flex;align-items:center;justify-content:center;flex:none;background:var(--paper);color:var(--green);width:35px;height:35px;border-radius:50%;font:14px ui-monospace,monospace}.sub{color:var(--muted);font-size:14px;margin:5px 0 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.field{display:flex;flex-direction:column;gap:7px}.full{grid-column:1/-1}label{font-size:14px;font-weight:600}input,textarea,select{font:inherit;width:100%;border:1px solid #cbd3c9;border-radius:7px;padding:11px 12px;background:#fff;color:var(--ink);min-height:46px}textarea{resize:vertical;min-height:90px}input:focus,textarea:focus,select:focus{outline:3px solid #ed592b25;border-color:var(--orange)}small,.help{color:var(--muted);font-size:12px;line-height:1.5}.note{border-left:3px solid #b8c7b6;padding:10px 14px;background:#f4f7f1;font-size:14px;color:#465347;margin-bottom:22px}.tablewrap{overflow:auto;grid-column:1/-1}table{border-collapse:collapse;width:100%;min-width:340px}th{text-align:left;font-size:13px;color:var(--muted);padding:8px 8px 8px 0}td{padding:6px 8px 6px 0}td:first-child{width:75px;font-weight:600}td input{max-width:260px}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:25px}button{cursor:pointer;font:inherit;font-size:14px;font-weight:600;line-height:1.3;padding:13px 18px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);min-height:46px}.primary{background:var(--ink);color:#fff;border-color:var(--ink)}button:hover{filter:brightness(.95)}button:focus-visible{outline:3px solid #ed592b66}.save{font-size:12px;color:var(--muted);margin-top:12px}#answerbox{margin-top:20px;min-height:380px;font:13px/1.6 ui-monospace,monospace}footer{margin-top:24px;color:var(--muted);font-size:12px}.optional{font-weight:400;color:var(--muted)}@media(max-width:650px){main{padding:24px 16px 60px}section{padding:22px 18px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.top{margin-bottom:24px}.pill{font-size:11px}.actions button{width:100%}}@media print{body{background:#fff}main{padding:0;max-width:none}section{break-inside:avoid;margin:12px 0;padding:18px}.actions,.progressbox,.save,#answerbox{display:none}.pill{border:0}input,textarea{border:0;border-bottom:1px solid #bbb;border-radius:0;padding:5px;min-height:30px}h1{font-size:28px}}
+</style>
+</head>
+<body><main>
+<div class="top"><div class="brand">AITU<span style="color:var(--orange)">.</span></div><span class="pill">Príprava na spustenie</span></div>
+<div class="eyebrow">Údaje na dokončenie e-shopu</div>
+<h1>Doplň podklady.<br>Ostatné dokončím.</h1>
+<p class="intro">Vyplň, čo vieš. Pri chýbajúcom údaji môžeš napísať „neviem“. Odpovede sa priebežne ukladajú v tomto prehliadači. Na konci ich stiahni alebo zobraz ako text a pošli do nášho rozhovoru.</p>
+<div class="facts"><span class="fact">Web zostáva uzamknutý</span><span class="fact">Dopravné pluginy bez zmien</span><span class="fact">7 dizajnov · SK / EN · 38 €</span></div>
+<div class="progressbox"><div class="progressrow"><span>Hlavné údaje</span><span id="progress-label">0 / 10 vyplnených</span></div><progress id="progress" value="0" max="10"></progress></div>
+<form id="questionnaire">
+<section><div class="sectionhead"><span class="num">01</span><div><h2>Predajca a kontakt</h2><p class="sub">Pre obchodné podmienky, súkromie a zákaznícku podporu.</p></div></div>
+<div class="note">V obchode je nastavená adresa <strong>Povraznícka 4, 811 07 Bratislava</strong>. Potvrď, či ide aj o sídlo predajcu a adresu na vrátenie tovaru.</div>
+<div class="grid">
+<div class="field full"><label for="seller">Obchodné meno / meno podnikateľa</label><input id="seller" name="seller" data-label="Obchodné meno / meno podnikateľa" data-main autocomplete="organization"></div>
+<div class="field"><label for="legal_form">Právna forma</label><input id="legal_form" name="legal_form" data-label="Právna forma" placeholder="Napr. živnostník, s. r. o."></div>
+<div class="field"><label for="ico">IČO</label><input id="ico" name="ico" data-label="IČO" data-main inputmode="numeric"></div>
+<div class="field"><label for="dic">DIČ</label><input id="dic" name="dic" data-label="DIČ" data-main placeholder="Prípadne uveď, že sa netýka"></div>
+<div class="field"><label for="vat">IČ DPH / status DPH</label><input id="vat" name="vat" data-label="IČ DPH / status DPH" data-main placeholder="Napr. nie som platiteľ DPH"></div>
+<div class="field full"><label for="address">Sídlo predajcu</label><textarea id="address" name="address" data-label="Sídlo predajcu" data-main placeholder="Ulica a číslo, PSČ, mesto, krajina"></textarea></div>
+<div class="field full"><label for="register">Zápis v registri <span class="optional">· ak ho máš poruke</span></label><input id="register" name="register" data-label="Zápis v obchodnom / živnostenskom registri"></div>
+<div class="field"><label for="email">Verejný e-mail pre zákazníkov</label><input id="email" name="email" data-label="E-mail pre zákazníkov" data-main type="email" autocomplete="email"></div>
+<div class="field"><label for="phone">Verejný telefón pre zákazníkov</label><input id="phone" name="phone" data-label="Telefón pre zákazníkov" data-main type="tel" autocomplete="tel"></div>
+<div class="field full"><label for="return_address">Adresa na vrátenie tovaru a reklamácie</label><textarea id="return_address" name="return_address" data-label="Adresa na vrátenie tovaru a reklamácie" data-main placeholder="Celá adresa alebo „rovnaká ako sídlo“"></textarea></div>
+</div></section>
+<section><div class="sectionhead"><span class="num">02</span><div><h2>Vybavenie objednávok</h2><p class="sub">Dopravcov, ceny a pravidlá v pluginoch ponechám tak, ako sú nastavené.</p></div></div><div class="grid">
+<div class="field"><label for="dispatch">Lehota expedície v pracovných dňoch</label><input id="dispatch" name="dispatch" data-label="Lehota expedície v pracovných dňoch" data-main placeholder="Od prijatia objednávky po odovzdanie dopravcovi"></div>
+<div class="field"><label for="invoices">Ako vystavuješ doklady k objednávkam?</label><input id="invoices" name="invoices" data-label="Spôsob vystavovania dokladov" placeholder="Ručne / názov fakturačného nástroja"></div>
+<div class="field full"><label for="customer_notes">Ďalšie podmienky pre zákazníkov <span class="optional">· nepovinné</span></label><textarea id="customer_notes" name="customer_notes" data-label="Ďalšie podmienky pre zákazníkov"></textarea></div>
+</div></section>
+<section><div class="sectionhead"><span class="num">03</span><div><h2>Tričká, veľkosti a sklad</h2><p class="sub">Tabuľky doplním podľa skutočných rozmerov.</p></div></div><div class="grid">
+<div class="field full"><label for="fit">Majú všetky tričká rovnaký strih a rozmery?</label><input id="fit" name="fit" data-label="Rovnaký strih všetkých tričiek / rozdiely podľa modelu" data-main placeholder="Áno / uveď rozdiely podľa dizajnu"></div>
+<div class="tablewrap"><table><thead><tr><th>Veľkosť</th><th>Šírka naplocho (cm)</th><th>Dĺžka (cm)</th></tr></thead><tbody>
+<tr><td>S</td><td><input aria-label="S – šírka v cm" name="s_width" data-label="S – šírka v cm" inputmode="decimal"></td><td><input aria-label="S – dĺžka v cm" name="s_length" data-label="S – dĺžka v cm" inputmode="decimal"></td></tr>
+<tr><td>M</td><td><input aria-label="M – šírka v cm" name="m_width" data-label="M – šírka v cm" inputmode="decimal"></td><td><input aria-label="M – dĺžka v cm" name="m_length" data-label="M – dĺžka v cm" inputmode="decimal"></td></tr>
+<tr><td>L</td><td><input aria-label="L – šírka v cm" name="l_width" data-label="L – šírka v cm" inputmode="decimal"></td><td><input aria-label="L – dĺžka v cm" name="l_length" data-label="L – dĺžka v cm" inputmode="decimal"></td></tr>
+<tr><td>XL</td><td><input aria-label="XL – šírka v cm" name="xl_width" data-label="XL – šírka v cm" inputmode="decimal"></td><td><input aria-label="XL – dĺžka v cm" name="xl_length" data-label="XL – dĺžka v cm" inputmode="decimal"></td></tr>
+</tbody></table><p class="help">Šírka: naplocho pod pazuchami. Dĺžka: od ramena po spodný lem. Ak sú strihy odlišné, rozpíš rozmery do poznámky nižšie.</p></div>
+<div class="field full"><label for="size_source">Zdroj rozmerov / rozdiely medzi strihmi</label><textarea id="size_source" name="size_source" data-label="Zdroj rozmerov / rozdiely medzi strihmi" placeholder="Namerané / tabuľka výrobcu / názov existujúceho podkladu"></textarea></div>
+<div class="field"><label for="weight">Hmotnosť jedného zabaleného trička (g)</label><input id="weight" name="weight" data-label="Hmotnosť zabaleného trička v gramoch" inputmode="decimal" placeholder="Ak ju poznáš"><small>Iba údaj produktu; nastavenia dopravných pluginov nemením.</small></div>
+<div class="field"><label for="stock_changes">Zmenil sa fyzický sklad?</label><textarea id="stock_changes" name="stock_changes" data-label="Zmeny fyzického skladu od posledného doplnenia produktov" placeholder="Nie / model, veľkosť a aktuálny počet kusov"></textarea></div>
+</div></section>
+<section><div class="sectionhead"><span class="num">04</span><div><h2>Odkazy značky</h2><p class="sub">Nepovinné. Doplním iba potvrdené oficiálne profily.</p></div></div><div class="grid">
+<div class="field"><label for="instagram">Instagram</label><input id="instagram" name="instagram" data-label="Oficiálny Instagram" placeholder="Odkaz alebo @profil"></div>
+<div class="field"><label for="twitter">X / Twitter</label><input id="twitter" name="twitter" data-label="Oficiálny X / Twitter" placeholder="Ak ho chceš uviesť"></div>
+<div class="field full"><label for="brand_notes">Ďalšie informácie o AITU</label><textarea id="brand_notes" name="brand_notes" data-label="Ďalšie informácie o AITU"></textarea></div>
+</div></section>
+<section><div class="sectionhead"><span class="num">05</span><div><h2>Úkony pred finálnym overením</h2><p class="sub">Overenie identity dokonči priamo vo WooPayments.</p></div></div><div class="grid">
+<div class="field full"><label for="wcpay">Overenie identity vo WooPayments</label><select id="wcpay" name="wcpay" data-label="Stav overenia identity vo WooPayments"><option value="">Vyber, keď to skontroluješ</option>Ešte nie je dokončené</option>Dokončené, môžeš overiť stav</option>Potrebujem návod, kde to nájdem</option></select><small>Dokonči priamo v administrácii WooPayments. Doklady, heslá ani osobné overovacie údaje do formulára nevkladaj.</small></div>
+
+</div></section>
+</form>
+<div class="actions"><button class="primary" id="download" type="button">Stiahnuť odpovede</button><button id="show" type="button">Zobraziť text odpovedí</button><button id="print" type="button">Vytlačiť / uložiť PDF</button></div>
+<p class="save" id="save-status" role="status">Pripravené na vyplnenie. Nič sa neodosiela automaticky.</p>
+<textarea id="answerbox" aria-label="Text odpovedí na skopírovanie" readonly hidden></textarea>
+<footer>GitHub repozitár je už známy: michalprekop/AITU-eshop. Skúšobnú platbu dohodneme po technických opravách a overení WooPayments. Tento formulár e-shop nespúšťa ani nemení jeho nastavenia.</footer>
+<script>
+(function(){
+'use strict';
+const key='aitu-prelaunch-answers-20260905-v1';
+const fields=Array.from(document.querySelectorAll('[data-label]'));
+const main=fields.filter(el=>el.hasAttribute('data-main'));
+const status=document.getElementById('save-status');
+const progress=document.getElementById('progress');
+progress.max=main.length;
+function update(){const filled=main.filter(el=>el.value.trim()).length;progress.value=filled;document.getElementById('progress-label').textContent=filled+' / '+main.length+' vyplnených';}
+function data(){return Object.fromEntries(fields.map(el=>[el.name,el.value]));}
+function save(){try{localStorage.setItem(key,JSON.stringify(data()));status.textContent='Odpovede uložené v tomto prehliadači. Nič sa neodosiela automaticky.';}catch(e){status.textContent='Prehliadač neumožňuje priebežné uloženie. Pred zatvorením stiahni odpovede.';}update();}
+try{const stored=JSON.parse(localStorage.getItem(key)||'{}');fields.forEach(el=>{if(typeof stored[el.name]==='string')el.value=stored[el.name];});}catch(e){}
+function answers(){return '# AITU – odpovede pred spustením\n\n'+Array.from(document.querySelectorAll('form section')).map(section=>'## '+section.querySelector('h2').textContent+'\n\n'+Array.from(section.querySelectorAll('[data-label]')).map(el=>el.dataset.label+':\n'+(el.value.trim()||'[zatiaľ nevyplnené]')).join('\n\n')).join('\n\n')+'\n';}
+fields.forEach(el=>{el.addEventListener('input',save);el.addEventListener('change',save);});
+document.getElementById('download').addEventListener('click',()=>{save();const blob=new Blob([answers()],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='AITU-odpovede-pred-spustenim.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+document.getElementById('show').addEventListener('click',()=>{const box=document.getElementById('answerbox');box.value=answers();box.hidden=false;box.focus();box.select();});
+document.getElementById('print').addEventListener('click',()=>window.print());
+document.getElementById('questionnaire').addEventListener('submit',event=>event.preventDefault());
+update();
+})();
+</script>
+</main></body></html>
