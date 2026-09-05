@@ -203,7 +203,7 @@
     }
   },
   "remaining": [
-    "public contact phone",
+    "pre-contract telephone information requirement unresolved; user declines publishing any phone",
     "WooPayments verification",
     "duplicate DMARC records and real email delivery test",
     "full controlled order/payment/invoice/shipping/refund test",
@@ -212,5 +212,12 @@
   "invoice_integration": "not activated; confirmed existing SuperFaktura workflow remains manual",
   "public_status": 503,
   "public_lock_message_verified": true,
-  "maintenance_file_sha256": "61b675d84d0841f459a4c04ee33196ef521286eb2e9dff83bdd5d9fb83fe95ee"
+  "maintenance_file_sha256": "61b675d84d0841f459a4c04ee33196ef521286eb2e9dff83bdd5d9fb83fe95ee",
+  "merchant_phone_decision": {
+    "date": "2026-09-06",
+    "publish": false,
+    "user_instruction": "Do not publish a telephone number. Do not repeatedly request a personal number.",
+    "contact_channel": "email",
+    "legal_requirement": "Act 108/2024 section 5(1)(c) remains unresolved; a separate business number has not been approved."
+  }
 }

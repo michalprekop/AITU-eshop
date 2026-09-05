@@ -24,7 +24,7 @@ Aktualizované 6. septembra 2026. Zmeny sú nasadené na aitu.world za existujú
 
 ## Čo zostáva pred verejným spustením
 
-1. **Verejný kontaktný telefón.** Formulár ho neobsahoval a v následnej odpovedi bolo doplnené iba správne DIČ. Telefón sa nevymýšľal. Ostatné potvrdené obchodné údaje už sú spracované.
+1. **Telefonický kontakt – rozhodnutie používateľa.** Používateľ 6. septembra výslovne uviedol, že telefón nechce zverejňovať. Rešpektovať tento pokyn; nežiadať opakovane jeho osobné číslo a bez nového výslovného pokynu žiadne číslo na web nedopĺňať. Kontakt ostáva e-mailom. Zákon č. 108/2024 Z. z. v [§ 5 ods. 1 písm. c)](https://static.slov-lex.sk/static/SK/ZZ/2024/108/20260731.html#paragraf-5) vyžaduje pred objednaním oznámiť telefónne číslo obchodníka, preto sa táto požiadavka nesmie označiť za splnenú. Možnosťou je samostatné firemné číslo; jeho zriadenie ani zverejnenie zatiaľ nie je schválené.
 2. **WooPayments.** Opätovná kontrola účtu ukázala `restricted_soon`, platby povolené, živý režim a nedokončené overenie identity s termínom 5. októbra 2026. Dokončenie vyžaduje údaje držiteľa účtu priamo vo WooPayments.
 3. **E-mailová doména.** `_dmarc.aitu.world` vracia dva DMARC záznamy (`p=quarantine` a `p=none`). Treba ich zjednotiť v DNS správe a overiť doručovanie. DNS sa nemenilo. Testy kódu e-mailov zachytávali odoslanie; nepreukazujú doručenie do schránky.
 4. **Skúška celej objednávky a expedície.** Zostáva kontrolovaná objednávka v SK aj EN: platba/3DS, výdajné miesto a kuriér, doručený e-mail, faktúra, odpis skladu, štítok, refundácia a doplnenie skladu. Reálna objednávka ani platba počas tejto práce nevznikla. Mobilný priebeh treba preveriť aj na skutočnom telefóne.

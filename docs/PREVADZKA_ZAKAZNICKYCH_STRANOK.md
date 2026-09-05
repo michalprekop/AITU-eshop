@@ -10,6 +10,12 @@ Pri zmene sídla, kontaktu alebo adresy vrátenia aktualizovať príslušné obc
 
 Po zmene zmluvných textov zvýšiť dátum/verziu v obsahu aj v `aitu_capture_contract_copy()`. Nové objednávky si uložia kópiu podmienok a poučenia o vrátení do `_aitu_contract_copy`. Zákaznícke e-maily pri čakaní na platbu, spracovaní, dokončení a zaslaní fakturačnej výzvy obsahujú túto uloženú kópiu. Staršia objednávka sa pri opakovanom poslaní neprepíše novým znením. Testy overili tento mechanizmus na objekte objednávky v pamäti; doručenie skutočného e-mailu sa ešte musí overiť.
 
+## Rozhodnutie o telefónnom kontakte
+
+Používateľ 6. septembra 2026 požiadal telefón nezverejňovať. Číslo ostáva prázdne a kontakt sa poskytuje e-mailom. Bez nového výslovného pokynu nedopĺňať žiadny telefón z účtu, fakturačných údajov ani iného zdroja; osobné číslo opakovane nevyžadovať. Tento pokyn nemení telefónne polia zákazníkov potrebné pre doručenie.
+
+Pred verejným spustením zostáva otvorené splnenie informačnej povinnosti podľa § 5 ods. 1 písm. c) zákona č. 108/2024 Z. z. Prípadné samostatné firemné číslo je iba možnosťou na neskoršie rozhodnutie, nie povolením na nákup alebo zverejnenie čísla.
+
 ## Online odstúpenie
 
 - SK: https://www.aitu.world/sk/odstupenie-od-zmluvy
